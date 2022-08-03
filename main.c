@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mndir <mndir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 16:24:27 by mndir             #+#    #+#             */
-/*   Updated: 2022/08/03 17:52:48 by mndir            ###   ########.fr       */
+/*   Created: 2022/08/03 17:43:42 by mndir             #+#    #+#             */
+/*   Updated: 2022/08/03 17:53:51 by mndir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+int	m(int a, int b, char *c)
+{
+	mlx_init();
+	mlx_new_window(mlx_init(), a, b, c);
+	return (mlx_loop(mlx_init()));
+}
 
-#include "./minilibx/mlx.h"
-
-int	m(int a, int b, char *c);
-
-#endif
+int	main(int ac, char **av)
+{
+	m(atoi(av[1]), atoi(av[2]), av[3]);
+}
